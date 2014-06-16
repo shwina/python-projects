@@ -40,8 +40,8 @@ class plotApp:
         # now, make a label for each name:
         self.labels = []
         for i in range(10):
-            self.labels.append(Label(frame, text=names[i]))
-            self.labels[i].pack()
+            self.labels.append(Label(frame, text=names[i], height=1, pady=2))
+            self.labels[i].grid(column=0, row=i)
 
         return frame
 
@@ -53,7 +53,7 @@ class plotApp:
         self.boxes = []
         for i in range(10):
             self.boxes.append(Entry(frame, width = 6))
-            self.boxes[i].pack()
+            self.boxes[i].grid(column=0, row=i)
 
         return frame
 
@@ -95,3 +95,17 @@ class plotApp:
 root = Tk()
 plotApp(root)
 root.mainloop()
+
+
+# TODO
+
+# align labels with entry boxes
+# initialise values with defaults
+# label plot x(m) and Flow rate (m^3/s)
+# LaTeX for entries
+# modularise this code
+# make the title something else
+# exit and refresh
+# formatting of the axes (we don't want a lot of zeros)
+# we may not want to 
+
