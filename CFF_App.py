@@ -91,6 +91,8 @@ class plotApp:
         print Q_ref
         a = self.f.add_subplot(111)
         a.plot(x, -Q_ref*sinh(x/lambda_C)+Q_0*cosh(x/lambda_C))
+        a.set_xlabel('x (m)')
+        a.set_ylabel('Flow Rate $(m^3/s)$')
         self.canvas.show()
 
 
@@ -102,18 +104,14 @@ class plotApp:
             self.boxes[i].insert(0, default_values[i])
 
 root = Tk()
+root.wm_title("Title goes here")
 plotApp(root)
 root.mainloop()
 
 
 # TODO
 
-# initialise values with defaults
-# label plot x(m) and Flow rate (m^3/s)
-# LaTeX for entries
 # modularise this code
-# make the title something else
 # exit and refresh
 # formatting of the axes (we don't want a lot of zeros)
-# we may not want to 
 
