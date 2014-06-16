@@ -19,6 +19,7 @@ class plotApp:
         boxesFrame  = self.makeEntryBoxes()
         plotFrame   = self.makePlotArea()
 
+        self.initializeEntryValues()
         plotButton = Button(self.master, text='PLOT!', command=self.make_plot)
 
         self.boxesFrame = boxesFrame
@@ -92,6 +93,14 @@ class plotApp:
         a.plot(x, -Q_ref*sinh(x/lambda_C)+Q_0*cosh(x/lambda_C))
         self.canvas.show()
 
+
+    def initializeEntryValues(self):
+
+        default_values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+        for i in range(10):
+            self.boxes[i].insert(0, default_values[i])
+
 root = Tk()
 plotApp(root)
 root.mainloop()
@@ -99,7 +108,6 @@ root.mainloop()
 
 # TODO
 
-# align labels with entry boxes
 # initialise values with defaults
 # label plot x(m) and Flow rate (m^3/s)
 # LaTeX for entries
