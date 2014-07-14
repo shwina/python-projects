@@ -76,7 +76,7 @@ class plotApp:
         x = linspace(0, 1, 100)
         a = self.f.add_subplot(211)
         a.plot(x, A*sin(B*(x + C)))
-        b.plot(x, A*sin(x))
+        a.plot(x, A*sin(x))
         self.canvas.show()
 
 root = Tk()
